@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
             margin-bottom: 20px;
         }
         
-        /* 基本情報と写真エリアのレイアウト調整 */
+        /* 基本情報と写真エリアのレイアウト（修正版） */
         .profile-container {
             display: flex;
             gap: 20px;
@@ -62,26 +62,35 @@
             font-weight: bold;
         }
         
-        /* 写真枠のスタイル設定 */
+        /* 写真枠が絶対に巨大化しないための絶対指定 */
+        .photo-area {
+            width: 120px;
+            flex-shrink: 0;
+            text-align: center;
+        }
         .photo-box {
-            width: 150px;
-            height: 200px;
+            width: 120px;
+            height: 160px;
             border: 1px solid #cbd5e0;
             background-color: #f7fafc;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            font-size: 12px;
-            color: #718096;
+            overflow: hidden;
             border-radius: 4px;
+            margin: 0 auto;
         }
         .photo-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 4px;
+        }
+        .photo-caption {
+            font-size: 11px;
+            color: #718096;
+            margin-top: 5px;
+            line-height: 1.2;
         }
 
         .cv-table {
@@ -126,13 +135,18 @@
             border-radius: 6px;
         }
         
+        /* スマホ表示での調整 */
         @media (max-width: 600px) {
             .profile-container {
                 flex-direction: column-reverse;
                 align-items: center;
+                gap: 15px;
             }
             .profile-table {
                 width: 100%;
+            }
+            .photo-area {
+                margin-bottom: 5px;
             }
         }
         
@@ -183,9 +197,12 @@
             </tr>
         </table>
         
-        <div class="photo-box">
-            <img src="id-photo.jpg" alt="証明写真" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <div style="display:none; padding: 10px;">証明写真貼付位置<br><small>(id-photo.jpg)</small></div>
+        <div class="photo-area">
+            <div class="photo-box">
+                <img src="id-photo.jpg" alt="証明写真" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display:none; padding: 10px; font-size: 11px; color: #a0aec0;">証明写真<br>貼付位置</div>
+            </div>
+            <div class="photo-caption"><small>(id-photo.jpg)</small></div>
         </div>
     </div>
 
