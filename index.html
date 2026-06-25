@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職務経歴書 - 戎桂子</title>
+    <style>
+        /* --- 基本リセット & モダングローバルスタイル --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            color: #333333;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 840px; /* A4幅を意識した読みやすい最適幅 */
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- ヘッダー領域 --- */
+        .header {
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .title-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-size: 22pt;
+            font-weight: bold;
+            color: #2c3e50;
+            letter-spacing: 4px;
+            margin: 0;
+        }
+        .date {
+            font-size: 10pt;
+            color: #7f8c8d;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px;
+            font-size: 9.5pt;
+            color: #555555;
+            background-color: #fdfefe;
+            padding: 12px;
+            border-radius: 4px;
+            border-left: 3px solid #bdc3c7;
+        }
+        .meta-grid a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .meta-grid a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- セクションタイトル --- */
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #2c3e50;
+            border-left: 5px solid #2c3e50;
+            padding-left: 10px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            page-break-after: avoid;
+        }
+
+        p.summary {
+            font-size: 10pt;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+            text-align: justify;
+        }
+
+        /* --- 文字ズレ・レイアウト崩れ防止テーブル --- */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            table-layout: fixed; /* 縮み・はみ出しを絶対防止 */
+        }
+        table.data-table th, table.data-table td {
+            border: 1px solid #dcdde1;
+            padding: 10px 12px;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            vertical-align: top;
+            word-wrap: break-word; /* テキストの強制折り返し */
+            overflow-wrap: break-word;
+        }
+        table.data-table th {
+            background-color: #f2f4f4;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        /* --- リストスタイル --- */
+        .job-ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        .job-ul li {
+            margin-bottom: 6px;
+        }
+        .job-ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- 自己PRブロック --- */
+        .pr-block {
+            background-color: #fcfcfc;
+            border: 1px solid #eaeded;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .pr-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 6px;
+            font-size: 10pt;
+        }
+        .pr-text {
+            margin: 0;
+            font-size: 9.5pt;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        /* --- A4印刷・PDF出力最適化用メディアクエリ --- */
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 0;
+            }
+            table.data-table th {
+                background-color: #f2f4f4 !important; /* 印刷時も背景色を維持 */
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            table.data-table tr {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* --- スマホ表示最適化 --- */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; }
+            table.data-table, table.data-table tbody, table.data-table tr, table.data-table td, table.data-table th {
+                display: block;
+                width: 100% !important;
+            }
+            table.data-table th { display: none; } /* スマホではヘッダーを隠す */
+            table.data-table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                padding: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="title-area">
+            <h1 class="title">職 務 経 歴 書</h1>
+            <div class="date">2026年5月7日現在</div>
+        </div>
+        <div class="meta-grid">
+            <div><strong>氏名:</strong> 戎 桂子（えびす けいこ）</div>
+            <div><strong>連絡先:</strong> <a href="mailto:epis.atelier@gmail.com">epis.atelier@gmail.com</a></div>
+            <div><strong>Instagram:</strong> <a href="https://instagram.com/epis_design" target="_blank">@epis_design</a></div>
+            <div><strong>ポートフォリオ:</strong> <a href="https://episdesign.myportfolio.com/" target="_blank">episdesign.myportfolio.com</a></div>
+        </div>
+    </div>
+
+    <div class="section-title">■ 職務概要</div>
+    <p class="summary">
+        フリーランスのグラフィックデザイナーとして商業採用実績を重ねる一方、日立製作所グループにて約9年間にわたり品質保証・テストエンジニア（V&V）として従事。TOEIC 780点の語学力を活かした海外プロジェクト対応や日英技術文書作成の実績を豊富に持ちます。エンジニアリングの「論理・正確さ」と、デザイナーの「視覚表現力」を掛け合わせた確実な業務推進が強みです。
+    </p>
+
+    <div class="section-title">■ スキル・使用ツール サマリー</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">分野</th>
+                <th style="width: 45%;">詳細・対応業務</th>
+                <th style="width: 30%;">主な使用ツール / 技術</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>グラフィックデザイン</strong></td>
+                <td>ポスター、チラシ、ロゴ、パッケージ、Tシャツ等のアパレルグラフィック、イベント告知物</td>
+                <td>Adobe Photoshop, Illustrator, Firefly（生成AI）, Canva, Midjourney</td>
+            </tr>
+            <tr>
+                <td><strong>イラスト・アート</strong></td>
+                <td>デジタルイラスト、キャラクターデザイン、アートプリント制作・受注販売（¥50,000/点）</td>
+                <td>同上</td>
+            </tr>
+            <tr>
+                <td><strong>Web・SNS素材</strong></td>
+                <td>バナー広告制作、SNS投稿画像、ポートフォリオサイト構築・運用</td>
+                <td>Figma, HTML, CSS, JavaScript, GitHub Pages, Adobe Portfolio</td>
+            </tr>
+            <tr>
+                <td><strong>言語・QA技術</strong></td>
+                <td>英日実務翻訳、技術文書・マニュアルの日英作成、システム検証、品質保証（QA）</td>
+                <td>TOEIC® 780点（2019年5月取得）、テストシナリオ・QCドキュメント作成</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">■ 商業採用・展示実績（2024年〜2026年）</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 15%;">時期</th>
+                <th style="width: 35%;">クライアント / 展覧会名</th>
+                <th style="width: 50%;">制作内容・実績</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>2026.03</strong></td>
+                <td>GAGグループ展「ANSWER.2.」</td>
+                <td>芳澤ガーデンギャラリーにて出展・作品販売</td>
+            </tr>
+            <tr>
+                <td><strong>2025.11~2026.01</strong></td>
+                <td>株式会社ジャパンソリューションズ</td>
+                <td>EC動画制作（映像ディレクションおよびグラフィック制作）</td>
+            </tr>
+            <tr>
+                <td><strong>2025.08</strong></td>
+                <td>中野区鍋横商店街</td>
+                <td>夏祭りTシャツデザイン採用</td>
+            </tr>
+            <tr>
+                <td><strong>2025.07</strong></td>
+                <td>住宅リフォーム会社</td>
+                <td>ロゴ添えイラスト採用（公開前案件）</td>
+            </tr>
+            <tr>
+                <td><strong>2025.06</strong></td>
+                <td>kahogo.（代官山 蔦屋書店展示）</td>
+                <td>パッケージデザイン採用（オンライン限定分は完売）</td>
+            </tr>
+            <tr>
+                <td><strong>2025.03</strong></td>
+                <td>グループ展「Answer」（吉祥寺）</td>
+                <td>GALLERY ZENONにて出展・作品販売</td>
+            </tr>
+            <tr>
+                <td><strong>2025.02</strong></td>
+                <td>大川原矯平 マジックショー</td>
+                <td>告知ポスター制作（業務委託・商業採用）</td>
+            </tr>
+            <tr>
+                <td><strong>2024</strong></td>
+                <td>株式会社JAPAN SOLUTIONS</td>
+                <td>クッションファンデーション ECバナー広告制作（コンペ採用）</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">■ 職務経歴</div>
+    
+    <p style="font-weight: bold; margin: 15px 0 5px 0; color: #2c3e50; font-size: 10pt;">1. クリエイティブ・デザイン領域（直近および過去の抜粋）</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">期間</th>
+                <th style="width: 30%;">組織・屋号名（雇用形態）</th>
+                <th style="width: 50%;">業務内容・主な成果</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>2025.10 ~ 現在</strong></td>
+                <td><strong>epi's atelier</strong><br>（個人事業主）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>Photoshop / Illustratorを用いた商業ポスター・ロゴ・パッケージ等の受注制作。</li>
+                        <li>オリジナルアクリルプリントの制作・限定販売（1点¥50,000の受注生産）。</li>
+                        <li>GitHub Pages / Adobe Portfolioを活用した、軽量かつUI/UXを重視した自社Webサイトの構築・運用。</li>
+                        <li>Instagram（@epis_design）を通じた国内外のアートコミュニティ形成。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2006.08 ~ 2007.05</strong></td>
+                <td><strong>日本放送協会（NHK）</strong><br>企画編成室（派遣）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>データ放送用の企画編成、テキストの記事校正、画像修正。</li>
+                        <li>Webサイトの情報発信・編集業務。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2001.11 ~ 2002.01</strong></td>
+                <td><strong>野村インベスター・リレーションズ</strong><br>（派遣）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>株主総会資料の作成、レイアウトデザイン、構成・文字校正業務。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>1996.04 ~ 2000.12</strong></td>
+                <td><strong>タワーレコード株式会社</strong><br>（契約社員・アルバイト）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>CDバイヤー（選定・発注）、音楽ライター（外部向け記事執筆）。</li>
+                        <li>来日アーティストイベントの通訳・翻訳業務。</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="font-weight: bold; margin: 20px 0 5px 0; color: #2c3e50; font-size: 10pt;">2. エンジニアリング・品質保証領域</p>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">期間</th>
+                <th style="width: 30%;">組織名 / 派遣先（雇用形態）</th>
+                <th style="width: 50%;">業務内容・主な成果</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>2024.11 ~ 2025.09</strong></td>
+                <td><strong>株式会社日立ハイテク</strong><br>ヘルスケア事業統括本部（派遣）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>医療機器（検査用装置）の出荷前準備、評価ジグ確認、マニュアルの新規作成・英訳。</li>
+                        <li>型式認定に伴う設計エビデンス収集、該非判定補助、QAレビュー会議の運営。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2021.09 ~ 2024.09</strong></td>
+                <td><strong>株式会社日立製作所</strong><br>鉄道ビジネスユニット（派遣）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>欧州鉄道統一列車制御システム（ETCS）の海外プロジェクトチーム支援、輸出書類作成。</li>
+                        <li>車上信号システム（ATP）の検証、テストシナリオ作成・実行・合否判定。</li>
+                        <li>外国籍エンジニアとの日英バイリンガルサポート、および国内外顧客（JR東日本、英国・豪州等）の対応。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>2016.01 ~ 2021.07</strong></td>
+                <td><strong>株式会社日立パワーソリューションズ</strong><br>CS部 交通推進センター（派遣）</td>
+                <td>
+                    <ul class="job-ul">
+                        <li>鉄道システム品質保証技術者として国内・海外プロジェクト（シンガポール等）を担当。</li>
+                        <li>製品検査、顧客立会検査、日英両語でのFAI/FAT Routine Test報告書作成。</li>
+                        <li>UI/UX検査および改修レビュー、独自試験設計、新人教育。</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">■ 教育・資格・所属</div>
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th style="width: 20%;">年月</th>
+                <th style="width: 20%;">区分</th>
+                <th style="width: 60%;">内容</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1993 ~ 1994</strong></td>
+                <td>留学・学歴</td>
+                <td><strong>The Academy of English, Cambridge (UK)</strong><br>6ヶ月語学留学（大学の優秀奨学生選抜による派遣）</td>
+            </tr>
+            <tr>
+                <td><strong>2019.05</strong></td>
+                <td>語学資格</td>
+                <td><strong>TOEIC® Listening & Reading Test: 780点</strong>（英日実務翻訳対応レベル）</td>
+            </tr>
+            <tr>
+                <td><strong>2025.01</strong></td>
+                <td>所属・認定</td>
+                <td><strong>グラフィックアーティストギルド（GAG）</strong> 会員 / 中間認定合格</td>
+            </tr>
+            <tr>
+                <td><strong>2024.02</strong></td>
+                <td>デザイン教育</td>
+                <td>日本デザインスクール入門編（Webデザイン） クオリティ認定修了</td>
+            </tr>
+            <tr>
+                <td><strong>2024.08</strong></td>
+                <td>その他資格</td>
+                <td>終活ライフコーディネーター</td>
+            </tr>
+            <tr>
+                <td><strong>2012.08</strong></td>
+                <td>その他資格</td>
+                <td>証券外務員特別会員二種</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="section-title">■ 自己PR</div>
+    <div class="pr-block">
+        <div class="pr-title">1. 品質保証で培った「厳格な正確性」をクリエイティブに同期</div>
+        <p class="pr-text">日立グループで約9年間培った品質保証（QA）・検証マインドは、デザインや言語評価において強力な武器となります。「ガイドラインの完璧な遵守」「徹底した校正（ファクトチェック）」「手戻りのない納期管理」を当然の習慣として実行します。</p>
+    </div>
+    <div class="pr-block">
+        <div class="pr-title">2. 言語化されないニーズを形にするデザイン・対話力</div>
+        <p class="pr-text">商業ポスターからパッケージ、SNS素材まで多数の採用実績があり、クライアントが言葉にしきれないニュアンスを汲み取って視覚化するプロセスを得意としています。</p>
+    </div>
+    <div class="pr-block">
+        <div class="pr-title">3. 完全リモート・スタンドアロンでの業務完結力</div>
+        <p class="pr-text">個人事業主として、オンラインでのスムーズな進捗共有、ファイル管理、修正対応を単独で完全にコントロールできるインフラと自律性を備えています。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
