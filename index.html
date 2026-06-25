@@ -2,453 +2,247 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <title>職務経歴書 - 戎桂子</title>
     <style>
-        /* --- 基本リセット & モダングローバルスタイル --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
         body {
-            font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
-            color: #333333;
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333;
             background-color: #f8f9fa;
             margin: 0;
             padding: 40px 20px;
-            -webkit-font-smoothing: antialiased;
         }
         .container {
-            max-width: 840px; /* A4幅を意識した読みやすい最適幅 */
+            max-width: 900px;
             margin: 0 auto;
-            background-color: #ffffff;
+            background: #fff;
             padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
-
-        /* --- ヘッダー領域 --- */
-        .header {
-            border-bottom: 3px solid #2c3e50;
-            padding-bottom: 15px;
+        h1 {
+            font-size: 26px;
+            text-align: center;
             margin-bottom: 30px;
-        }
-        .title-area {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .title {
-            font-size: 22pt;
-            font-weight: bold;
             color: #2c3e50;
-            letter-spacing: 4px;
-            margin: 0;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
         }
-        .date {
-            font-size: 10pt;
-            color: #7f8c8d;
-        }
-        .meta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 8px;
-            font-size: 9.5pt;
-            color: #555555;
-            background-color: #fdfefe;
-            padding: 12px;
-            border-radius: 4px;
-            border-left: 3px solid #bdc3c7;
-        }
-        .meta-grid a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-        .meta-grid a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- セクションタイトル --- */
-        .section-title {
-            font-size: 13pt;
-            font-weight: bold;
+        h2 {
+            font-size: 18px;
             color: #2c3e50;
+            background: #edf2f7;
+            padding: 10px 15px;
             border-left: 5px solid #2c3e50;
-            padding-left: 10px;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            page-break-after: avoid;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
-
-        p.summary {
-            font-size: 10pt;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-            text-align: justify;
-        }
-
-        /* --- 文字ズレ・レイアウト崩れ防止テーブル --- */
-        table.data-table {
+        .profile-table, .cv-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 25px;
-            table-layout: fixed; /* 縮み・はみ出しを絶対防止 */
+            margin-bottom: 20px;
         }
-        table.data-table th, table.data-table td {
-            border: 1px solid #dcdde1;
-            padding: 10px 12px;
-            font-size: 9.5pt;
-            line-height: 1.5;
-            vertical-align: top;
-            word-wrap: break-word; /* テキストの強制折り返し */
-            overflow-wrap: break-word;
+        .profile-table th, .profile-table td {
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
         }
-        table.data-table th {
-            background-color: #f2f4f4;
-            color: #2c3e50;
+        .profile-table th {
+            background-color: #f7fafc;
+            width: 25%;
             font-weight: bold;
         }
-
-        /* --- リストスタイル --- */
-        .job-ul {
-            margin: 0;
-            padding-left: 18px;
-        }
-        .job-ul li {
-            margin-bottom: 6px;
-        }
-        .job-ul li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* --- 自己PRブロック --- */
-        .pr-block {
-            background-color: #fcfcfc;
-            border: 1px solid #eaeded;
+        .cv-table th, .cv-table td {
             padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
         }
-        .pr-title {
+        .cv-table th {
+            background-color: #f7fafc;
+            width: 25%;
             font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 6px;
-            font-size: 10pt;
+            text-align: left;
         }
-        .pr-text {
-            margin: 0;
-            font-size: 9.5pt;
-            line-height: 1.6;
-            text-align: justify;
+        .date-col {
+            width: 20%;
+            font-weight: bold;
+            color: #4a5568;
         }
-
-        /* --- A4印刷・PDF出力最適化用メディアクエリ --- */
+        ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .highlight {
+            background-color: #ebf8ff;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3182ce;
+            margin-bottom: 20px;
+        }
+        .text-right {
+            text-align: right;
+            font-size: 14px;
+            color: #718096;
+        }
         @media print {
-            body {
-                background-color: #ffffff;
-                padding: 0;
-            }
-            .container {
-                max-width: 100%;
-                box-shadow: none;
-                padding: 0;
-            }
-            table.data-table th {
-                background-color: #f2f4f4 !important; /* 印刷時も背景色を維持 */
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            table.data-table tr {
-                page-break-inside: avoid;
-            }
-        }
-
-        /* --- スマホ表示最適化 --- */
-        @media (max-width: 600px) {
-            body { padding: 10px; }
-            .container { padding: 20px; }
-            table.data-table, table.data-table tbody, table.data-table tr, table.data-table td, table.data-table th {
-                display: block;
-                width: 100% !important;
-            }
-            table.data-table th { display: none; } /* スマホではヘッダーを隠す */
-            table.data-table td {
-                border: none;
-                border-bottom: 1px solid #eee;
-                padding: 8px 0;
-            }
+            body { background: #fff; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+            h2 { page-break-after: avoid; }
+            tr { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="text-right">2026年6月25日 現在</div>
+    <h1>職 務 経 歴 書</h1>
 
-    <div class="header">
-        <div class="title-area">
-            <h1 class="title">職 務 経 歴 書</h1>
-            <div class="date">2026年6月25日現在</div>
-        </div>
-        <div class="meta-grid">
-            <div><strong>氏名:</strong> 戎 桂子（えびす けいこ）</div>
-            <div><strong>連絡先:</strong> <a href="mailto:epis.atelier@gmail.com">epis.atelier@gmail.com</a></div>
-            <div><strong>Instagram:</strong> <a href="https://instagram.com/epis_design" target="_blank">@epis_design</a></div>
-            <div><strong>ポートフォリオ:</strong> <a href="https://episdesign.myportfolio.com/" target="_blank">episdesign.myportfolio.com</a></div>
-        </div>
+    <h2>基本情報</h2>
+    <table class="profile-table">
+        <tr>
+            <th>氏名</th>
+            <td>戎 桂子（エビス ケイコ）</td>
+        </tr>
+        <tr>
+            <th>生年月日</th>
+            <td>1973年11月27日（満52歳）</td>
+        </tr>
+        <tr>
+            <th>現住所</th>
+            <td>茨城県ひたちなか市</td>
+        </tr>
+        <tr>
+            <th>連絡先</th>
+            <td>090-7720-4820 / epis.atelier@gmail.com</td>
+        </tr>
+    </table>
+
+    <h2>職務要約</h2>
+    <div class="highlight">
+        大学卒業後、音楽ビジネス、資料デザイン、放送局での編集・校正等、多様なクリエイティブ・事務領域を経験。2016年からは正社員エンジニアとして、日立グループ（日立パワーソリューションズ、日立製作所、日立ハイテク）にて約9年間にわたり鉄道システムや先端医療機器の「品質保証・検証エンジニア」として従事。技術文書の作成・翻訳や海外拠点との英語コミュニケーションで現場の課題解決を牽引しました。また、並行してグラフィックデザインスキルを磨き、商業コンペ採用を含む多数の実績を有しています。「論理的な技術理解力」と「クリエイティブな表現力」を掛け合わせ、フルリモート環境から組織のコミュニケーション機能の立ち上げ・推進に貢献します。
     </div>
 
-    <div class="section-title">■ 職務概要</div>
-    <p class="summary">
-        フリーランスのグラフィックデザイナーとして商業採用実績を重ねる一方、日立製作所グループにて約9年間にわたり品質保証・テストエンジニア（V&V）として従事。TOEIC 780点の語学力を活かした海外プロジェクト対応や日英技術文書作成の実績を豊富に持ちます。エンジニアリングの「論理・正確さ」と、デザイナーの「視覚表現力」を掛け合わせた確実な業務推進が強みです。
-    </p>
-
-    <div class="section-title">■ スキル・使用ツール サマリー</div>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 25%;">分野</th>
-                <th style="width: 45%;">詳細・対応業務</th>
-                <th style="width: 30%;">主な使用ツール / 技術</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>グラフィックデザイン</strong></td>
-                <td>ポスター、チラシ、ロゴ、パッケージ、Tシャツ等のアパレルグラフィック、イベント告知物</td>
-                <td>Adobe Photoshop, Illustrator, Firefly（生成AI）, Canva, Midjourney</td>
-            </tr>
-            <tr>
-                <td><strong>イラスト・アート</strong></td>
-                <td>デジタルイラスト、キャラクターデザイン、アートプリント制作・受注販売（¥50,000/点）</td>
-                <td>同上</td>
-            </tr>
-            <tr>
-                <td><strong>Web・SNS素材</strong></td>
-                <td>バナー広告制作、SNS投稿画像、ポートフォリオサイト構築・運用</td>
-                <td>Figma, HTML, CSS, JavaScript, GitHub Pages, Adobe Portfolio</td>
-            </tr>
-            <tr>
-                <td><strong>言語・QA技術</strong></td>
-                <td>英日実務翻訳、技術文書・マニュアルの日英作成、システム検証、品質保証（QA）</td>
-                <td>TOEIC® 780点（2019年5月取得）、テストシナリオ・QCドキュメント作成</td>
-            </tr>
-        </tbody>
+    <h2>主要なスキル・資格</h2>
+    <table class="profile-table">
+        <tr>
+            <th>語学・コミュニケーション</th>
+            <td>
+                ・TOEIC® 780点（2019年5月取得）<br>
+                ・英日通訳・翻訳（技術文書、マニュアル、海外拠点向け評価フィードバック）
+            </td>
+        </tr>
+        <tr>
+            <th>クリエイティブ</th>
+            <td>
+                ・グラフィックデザイン（商業コンペ採用、ポスター、パッケージ、Tシャツデザイン等）<br>
+                ・グラフィックアーティストギルド（GAG）会員（中間認定合格）<br>
+                ・Webデザイン（日本デザインスクールWebデザイン入門編クオリティ認定修了）
+            </td>
+        </tr>
+        <tr>
+            <th>テクニカル・その他</th>
+            <td>
+                ・システム検証・品質保証（QA）、ソフトウェアテスト、仕様書・手順書分析<br>
+                ・低圧電気取扱業務特別教育 修了（2025年8月更新） / 証券外務員特別会員二種
+            </td>
+        </tr>
     </table>
 
-    <div class="section-title">■ 商業採用・展示実績（2024年〜2026年）</div>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 15%;">時期</th>
-                <th style="width: 35%;">クライアント / 展覧会名</th>
-                <th style="width: 50%;">制作内容・実績</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>2026.03</strong></td>
-                <td>GAGグループ展「ANSWER.2.」</td>
-                <td>芳澤ガーデンギャラリーにて出展・作品販売</td>
-            </tr>
-            <tr>
-                <td><strong>2025.11~2026.01</strong></td>
-                <td>株式会社ジャパンソリューションズ</td>
-                <td>EC動画制作（映像ディレクションおよびグラフィック制作）</td>
-            </tr>
-            <tr>
-                <td><strong>2025.08</strong></td>
-                <td>中野区鍋横商店街</td>
-                <td>夏祭りTシャツデザイン採用</td>
-            </tr>
-            <tr>
-                <td><strong>2025.07</strong></td>
-                <td>住宅リフォーム会社</td>
-                <td>ロゴ添えイラスト採用（公開前案件）</td>
-            </tr>
-            <tr>
-                <td><strong>2025.06</strong></td>
-                <td>kahogo.（代官山 蔦屋書店展示）</td>
-                <td>パッケージデザイン採用（オンライン限定分は完売）</td>
-            </tr>
-            <tr>
-                <td><strong>2025.03</strong></td>
-                <td>グループ展「Answer」（吉祥寺）</td>
-                <td>GALLERY ZENONにて出展・作品販売</td>
-            </tr>
-            <tr>
-                <td><strong>2025.02</strong></td>
-                <td>大川原矯平 マジックショー</td>
-                <td>告知ポスター制作（業務委託・商業採用）</td>
-            </tr>
-            <tr>
-                <td><strong>2024</strong></td>
-                <td>株式会社JAPAN SOLUTIONS</td>
-                <td>クッションファンデーション ECバナー広告制作（コンペ採用）</td>
-            </tr>
-        </tbody>
+    <h2>職務経歴の詳細</h2>
+    <table class="cv-table">
+        <!-- 最新実績：Japanソリューションズ -->
+        <tr>
+            <td class="date-col">2024年 2月 〜<br>現在</td>
+            <td>
+                <strong>【並行活動】フリーランス（グラフィックデザイン）</strong><br>
+                クラウドワークス等を通じて、デザイン業務を継続して受託。
+                <ul>
+                    <li><strong>株式会社Japanソリューションズ様 主催コンペにてデザイン採用</strong></li>
+                    <li>その他、商業ポスター、パッケージ、ロゴ、Tシャツ等のデザイン制作実績多数</li>
+                </ul>
+                <small style="color: #666; display: block; margin-top: 5px;">※クライアント企業様の意向および守秘義務遵守のため、成果物詳細は伏せ、社名のみの記載としています。</small>
+            </td>
+        </tr>
+        <!-- スタフサービス（日立製作所・日立ハイテク） -->
+        <tr>
+            <td class="date-col">2021年 8月 〜<br>2026年 1月</td>
+            <td>
+                <strong>株式会社スタッフ・サービス・エンジニアリング（正社員）</strong><br>
+                【派遣先】株式会社日立製作所 / 株式会社日立ハイテク<br>
+                <strong>【業務内容】品質保証・検証エンジニア（半導体計測装置・生化学分析装置）</strong>
+                <ul>
+                    <li>海外製生化学分析装置のソフトウェアおよびハードウェア検証業務</li>
+                    <li>実機を用いたソフトウェアテストの設計・実行、不具合報告、プロセス改善提案</li>
+                    <li>海外拠点（英語圏）との仕様整合、言語評価、エラーメッセージの英日・日英翻訳</li>
+                    <li>日立ハイテク社内における新基準に基づく安全教育の受講・更新（低圧電気取扱）</li>
+                </ul>
+                <text style="color: #718096; font-size: 14px;">※会社都合により退職</text>
+            </td>
+        </tr>
+        <!-- テクロプロ（日立パワーソリューションズ） -->
+        <tr>
+            <td class="date-col">2016年 1月 〜<br>2021年 7月</td>
+            <td>
+                <strong>株式会社テクノプロ（正社員）</strong><br>
+                【派遣先】株式会社日立パワーソリューションズ<br>
+                <strong>【業務内容】鉄道システム品質保証技術者・技術ドキュメント推進</strong>
+                <ul>
+                    <li>国内外向け鉄道運行管理システム、変電所制御システムの品質保証業務</li>
+                    <li>仕様書・技術手順書の分析、検証網羅性の担保、試験仕様書の作成</li>
+                    <li>プロジェクトマネージャーおよび現場技術者間のコミュニケーション円滑化、ドキュメント標準化の推進</li>
+                </ul>
+            </td>
+        </tr>
+        <!-- 2007-2016 事務・通訳期 -->
+        <tr>
+            <td class="date-col">2007年 8月 〜<br>2016年 1月</td>
+            <td>
+                <strong>各種契約社員・派遣社員としてのキャリア形成</strong>
+                <ul>
+                    <li><strong>テンプスタッフ株式会社（派遣）→ 中央労働金庫</strong>（2014年12月〜2015年11月）：金融事務・確実なデータ処理</li>
+                    <li><strong>株式会社キタムラ（契約社員）</strong>（2014年1月〜2014年11月）：Apple製品修理受付および英日通訳、顧客コミュニケーション</li>
+                    <li><strong>テンプスタッフ株式会社（派遣）→ 損保ジャパン株式会社</strong>（2012年9月〜2013年9月）：一般事務・営業後方支援</li>
+                    <li><strong>ランスタッド株式会社（派遣）→ 株式会社常陽銀行</strong>（2012年3月〜2012年8月）：テレコミュニケータ・顧客対応</li>
+                    <li><strong>株式会社キャリアライズ（派遣）→ 東京電力株式会社</strong>（2009年12月〜2011年12月）：営業事務・データ管理</li>
+                    <li><strong>株式会社キャリアライズ（派遣）→ KDDI株式会社</strong>（2007年8月〜2009年11月）：営業事務・契約書類管理</li>
+                </ul>
+            </td>
+        </tr>
+        <!-- 1996-2007 キャリア初期・クリエイティブ原点 -->
+        <tr>
+            <td class="date-col">1996年 4月 〜<br>2007年 5月</td>
+            <td>
+                <strong>キャリア初期における言語・クリエイティブ実務</strong>
+                <ul>
+                    <li><strong>日本放送協会（NHK / 派遣）</strong>（2006年8月〜2007年5月）：企画編成室にてデータ放送用企画編成、テキスト記事校正、画像修正</li>
+                    <li><strong>野村インベスター・リレーションズ株式会社（派遣）</strong>（2001年11月〜2002年1月）：株主総会資料の作成、DTPレイアウトデザイン、構成・文字校正</li>
+                    <li><strong>タワーレコード株式会社（契約社員・アルバイト）</strong>（1996年4月〜2000年12月）：CDバイヤー、音楽ライター業務、来日アーティストイベント時の通訳・翻訳業務</li>
+                </ul>
+            </td>
+        </tr>
     </table>
 
-    <div class="section-title">■ 職務経歴</div>
-    
-    <p style="font-weight: bold; margin: 15px 0 5px 0; color: #2c3e50; font-size: 10pt;">1. クリエイティブ・デザイン領域（直近および過去の抜粋）</p>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 20%;">期間</th>
-                <th style="width: 30%;">組織・屋号名（雇用形態）</th>
-                <th style="width: 50%;">業務内容・主な成果</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>2025.10 ~ 現在</strong></td>
-                <td><strong>epi's atelier</strong><br>（個人事業主）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>Photoshop / Illustratorを用いた商業ポスター・ロゴ・パッケージ等の受注制作。</li>
-                        <li>オリジナルアクリルプリントの制作・限定販売（1点¥50,000の受注生産）。</li>
-                        <li>GitHub Pages / Adobe Portfolioを活用した、軽量かつUI/UXを重視した自社Webサイトの構築・運用。</li>
-                        <li>Instagram（@epis_design）を通じた国内外のアートコミュニティ形成。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>2006.08 ~ 2007.05</strong></td>
-                <td><strong>日本放送協会（NHK）</strong><br>企画編成室（派遣）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>データ放送用の企画編成、テキストの記事校正、画像修正。</li>
-                        <li>Webサイトの情報発信・編集業務。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>2001.11 ~ 2002.01</strong></td>
-                <td><strong>野村インベスター・リレーションズ</strong><br>（派遣）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>株主総会資料の作成、レイアウトデザイン、構成・文字校正業務。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>1996.04 ~ 2000.12</strong></td>
-                <td><strong>タワーレコード株式会社</strong><br>（契約社員・アルバイト）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>CDバイヤー（選定・発注）、音楽ライター（外部向け記事執筆）。</li>
-                        <li>来日アーティストイベントの通訳・翻訳業務。</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
+    <h2>学歴</h2>
+    <table class="cv-table">
+        <tr>
+            <td class="date-col">1992年 4月</td>
+            <td>東海女子大学 文学部英米文化学科語学コース 入学</td>
+        </tr>
+        <tr>
+            <td class="date-col">1993年 〜<br>1994年</td>
+            <td><strong>The Academy of English, Cambridge (UK)</strong><br>6ヶ月語学留学（大学の優秀奨学生選抜による派遣）</td>
+        </tr>
+        <tr>
+            <td class="date-col">1996年 3月</td>
+            <td>東海女子大学 文学部英米文化学科語学コース 卒業</td>
+        </tr>
     </table>
-
-    <p style="font-weight: bold; margin: 20px 0 5px 0; color: #2c3e50; font-size: 10pt;">2. エンジニアリング・品質保証領域</p>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 20%;">期間</th>
-                <th style="width: 30%;">組織名 / 派遣先（雇用形態）</th>
-                <th style="width: 50%;">業務内容・主な成果</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>2024.11 ~ 2025.09</strong></td>
-                <td><strong>株式会社日立ハイテク</strong><br>ヘルスケア事業統括本部（派遣）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>医療機器（検査用装置）の出荷前準備、評価ジグ確認、マニュアルの新規作成・英訳。</li>
-                        <li>型式認定に伴う設計エビデンス収集、該非判定補助、QAレビュー会議の運営。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>2021.09 ~ 2024.09</strong></td>
-                <td><strong>株式会社日立製作所</strong><br>鉄道ビジネスユニット（派遣）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>欧州鉄道統一列車制御システム（ETCS）の海外プロジェクトチーム支援、輸出書類作成。</li>
-                        <li>車上信号システム（ATP）の検証、テストシナリオ作成・実行・合否判定。</li>
-                        <li>外国籍エンジニアとの日英バイリンガルサポート、および国内外顧客（JR東日本、英国・豪州等）の対応。</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>2016.01 ~ 2021.07</strong></td>
-                <td><strong>株式会社日立パワーソリューションズ</strong><br>CS部 交通推進センター（派遣）</td>
-                <td>
-                    <ul class="job-ul">
-                        <li>鉄道システム品質保証技術者として国内・海外プロジェクト（シンガポール等）を担当。</li>
-                        <li>製品検査、顧客立会検査、日英両語でのFAI/FAT Routine Test報告書作成。</li>
-                        <li>UI/UX検査および改修レビュー、独自試験設計、新人教育。</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="section-title">■ 教育・資格・所属</div>
-    <table class="data-table">
-        <thead>
-            <tr>
-                <th style="width: 20%;">年月</th>
-                <th style="width: 20%;">区分</th>
-                <th style="width: 60%;">内容</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>1993 ~ 1994</strong></td>
-                <td>留学・学歴</td>
-                <td><strong>The Academy of English, Cambridge (UK)</strong><br>6ヶ月語学留学（大学の優秀奨学生選抜による派遣）</td>
-            </tr>
-            <tr>
-                <td><strong>2019.05</strong></td>
-                <td>語学資格</td>
-                <td><strong>TOEIC® Listening & Reading Test: 780点</strong>（英日実務翻訳対応レベル）</td>
-            </tr>
-            <tr>
-                <td><strong>2025.01</strong></td>
-                <td>所属・認定</td>
-                <td><strong>グラフィックアーティストギルド（GAG）</strong> 会員 / 中間認定合格</td>
-            </tr>
-            <tr>
-                <td><strong>2024.02</strong></td>
-                <td>デザイン教育</td>
-                <td>日本デザインスクール入門編（Webデザイン） クオリティ認定修了</td>
-            </tr>
-            <tr>
-                <td><strong>2024.08</strong></td>
-                <td>その他資格</td>
-                <td>終活ライフコーディネーター</td>
-            </tr>
-            <tr>
-                <td><strong>2012.08</strong></td>
-                <td>その他資格</td>
-                <td>証券外務員特別会員二種</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="section-title">■ 自己PR</div>
-    <div class="pr-block">
-        <div class="pr-title">1. 品質保証で培った「厳格な正確性」をクリエイティブに同期</div>
-        <p class="pr-text">日立グループで約9年間培った品質保証（QA）・検証マインドは、デザインや言語評価において強力な武器となります。「ガイドラインの完璧な遵守」「徹底した校正（ファクトチェック）」「手戻りのない納期管理」を当然の習慣として実行します。</p>
-    </div>
-    <div class="pr-block">
-        <div class="pr-title">2. 言語化されないニーズを形にするデザイン・対話力</div>
-        <p class="pr-text">商業ポスターからパッケージ、SNS素材まで多数の採用実績があり、クライアントが言葉にしきれないニュアンスを汲み取って視覚化するプロセスを得意としています。</p>
-    </div>
-    <div class="pr-block">
-        <div class="pr-title">3. 完全リモート・スタンドアロンでの業務完結力</div>
-        <p class="pr-text">個人事業主として、オンラインでのスムーズな進捗共有、ファイル管理、修正対応を単独で完全にコントロールできるインフラと自律性を備えています。</p>
-    </div>
-
 </div>
 
 </body>
